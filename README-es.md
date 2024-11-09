@@ -29,7 +29,7 @@ Este script complementa la herramienta Any-Records, proporcionando una interfaz 
 
 ## 🖥️ Vista Previa
 Al ejecutar el script, verás una interfaz como esta:
-```bash
+```sql
 ╔════════════════════════════════════════╗
 ║    Herramienta de Consulta DNS v1.0    ║
 ║  Herramienta Avanzada de Información   ║
