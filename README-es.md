@@ -30,29 +30,21 @@ Este script complementa la herramienta Any-Records, proporcionando una interfaz 
 ## 🖥️ Vista Previa
 Al ejecutar el script, verás una interfaz como esta:
 ```bash
-
-### 2. Uso de `tput` en Bash para Colores en un Script
-
-Si el script va a ejecutarse en una terminal y deseas colores específicos, puedes aplicar el comando `tput` en Bash para definir colores en tu código. Esto permite una ejecución más visual en la terminal.
-
-```bash
-# Definir colores usando tput
-verde=$(tput setaf 2)
-azul=$(tput setaf 4)
-reset=$(tput sgr0)
-
-# Inicio del script con colores
-echo "${azul}╔════════════════════════════════════════╗"
-echo "║    ${verde}Herramienta de Consulta DNS v1.0${azul}    ║"
-echo "║  ${verde}Herramienta Avanzada de Información   ${azul}║"
-echo "║             de Dominios                ║"
-echo "╚════════════════════════════════════════╝${reset}"
-
-# Continuar con la lógica del script
-echo -e "${verde}Por favor, ingrese el dominio a consultar:${reset}"
-read -p "➜ " dominio
-echo -e "[${verde}+${reset}] Resolviendo servidor de nombres para ${dominio}..."
-echo -e "[${verde}✓${reset}] Servidor de nombres encontrado: ${azul}ns1.${dominio}${reset}"
+╔════════════════════════════════════════╗
+║    Herramienta de Consulta DNS v1.0    ║
+║  Herramienta Avanzada de Información   ║
+║             de Dominios                ║
+╚════════════════════════════════════════╝
+Por favor, ingrese el dominio a consultar:
+➜ ejemplo.com
+[+] Resolviendo servidor de nombres para ejemplo.com...
+[✓] Servidor de nombres encontrado: ns1.ejemplo.com
+¿Desea guardar los registros DNS en un archivo? [s/N]:
+➜ s
+Ingrese el nombre del archivo de salida:
+➜ ejemplo_dns
+[+] Consultando registros DNS...
+[✓] Resultados guardados en: ejemplo_dns_20240109_143022.txt
 ```
 
 
