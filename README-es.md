@@ -19,7 +19,7 @@
 
 ## 💻 Instalación
 Puedes clonar este repositorio y ejecutar el script de la siguiente manera:
-```bash
+```sh
 git clone https://github.com/BitAllx/Any-Records.git
 cd Any-Records
 ```
