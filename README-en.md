@@ -30,7 +30,7 @@ This script complements the Any-Records tool, providing an interactive interface
 
 ## 🖥️ Preview
 When running the script, you'll see an interface like this:
-```javascript
+```java
 ╔════════════════════════════════════════╗
 ║          DNS Query Tool v1.0           ║
 ║    Advanced Domain Information Tool    ║
