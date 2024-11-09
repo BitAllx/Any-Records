@@ -30,6 +30,7 @@ This script complements the Any-Records tool, providing an interactive interface
 
 ## 🖥️ Preview
 When running the script, you'll see an interface like this:
+![Captura de pantalla 2024-11-09 123113](https://github.com/user-attachments/assets/56b1dbca-ca36-45e7-a9c7-49acd4182c2d)
 ```sql
 ╔════════════════════════════════════════╗
 ║          DNS Query Tool v1.0           ║
@@ -47,8 +48,10 @@ Enter the output filename:
 [✓] Results saved to: example_dns_20240109_143022.txt
 ```
 
+
 ## ⚡ Quick Usage
 1. **🚀 Run the script**:
+
 ```bash
 chmod +x dns-query-tool.sh
 ./dns-query-tool.sh
