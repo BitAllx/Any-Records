@@ -2,7 +2,7 @@
 
 **Any-Records** is a command-line tool developed in Python to automatically query all possible DNS records for a specific domain using `nslookup`. This tool simplifies the process of retrieving DNS records by automatically displaying all common DNS records for a domain, such as `A`, `AAAA`, `CNAME`, `MX`, `NS`, `TXT`, and more.
 
-## ✨ <span style="color: red">Features</span>
+## ✨ Features
 - **🚀 Automated Record Lookup**: Automatically queries all common DNS records.
 - **👥 User-Friendly Interface**: Easy to use from the command line.
 - **📝 Clear Output**: Displays information for each record type in a readable format.
