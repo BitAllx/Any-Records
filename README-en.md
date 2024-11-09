@@ -20,7 +20,7 @@
 
 ## 💻 Installation
 You can clone this repository and run the script as follows:
-```zsh
+```sql
 git clone https://github.com/BitAllx/Any-Records.git
 cd Any-Records
 ```
@@ -49,19 +49,19 @@ Enter the output filename:
 
 ## ⚡ Quick Usage
 1. **🚀 Run the script**:
-```bash
+```sql
 chmod +x dns-query-tool.sh
 ./dns-query-tool.sh
 ```
 
 2. **🔍 Simple Query**:
-```bash
+```sql
 ./dns-query-tool.sh
 ➜ google.com
 ```
 
 3. **💾 Query with Save Option**:
-```bash
+```sql
 ./dns-query-tool.sh
 ➜ google.com
 Do you want to save the DNS records to a file? [y/N]:
