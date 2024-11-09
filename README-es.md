@@ -29,23 +29,28 @@ Este script complementa la herramienta Any-Records, proporcionando una interfaz 
 
 ## 🖥️ Vista Previa
 Al ejecutar el script, verás una interfaz como esta:
-```sql
-╔════════════════════════════════════════╗
-║    Herramienta de Consulta DNS v1.0    ║
-║  Herramienta Avanzada de Información   ║
-║             de Dominios                ║
-╚════════════════════════════════════════╝
-Por favor, ingrese el dominio a consultar:
-➜ ejemplo.com
-[+] Resolviendo servidor de nombres para ejemplo.com...
-[✓] Servidor de nombres encontrado: ns1.ejemplo.com
-¿Desea guardar los registros DNS en un archivo? [s/N]:
-➜ s
-Ingrese el nombre del archivo de salida:
-➜ ejemplo_dns
-[+] Consultando registros DNS...
-[✓] Resultados guardados en: ejemplo_dns_20240109_143022.txt
-```
+```bash
+# ╔════════════════════════════════════════╗
+# ║    Herramienta de Consulta DNS v1.0    ║
+# ║  Herramienta Avanzada de Información   ║
+# ║             de Dominios                ║
+# ╚════════════════════════════════════════╝
+echo "Por favor, ingrese el dominio a consultar:"
+read -p "➜ " dominio
+echo "[+] Resolviendo servidor de nombres para $dominio..."
+echo "[✓] Servidor de nombres encontrado: ns1.$dominio"
+
+read -p "¿Desea guardar los registros DNS en un archivo? [s/N]: " guardar
+if [[ $guardar == "s" ]]; then
+    read -p "Ingrese el nombre del archivo de salida: " archivo
+    echo "[+] Consultando registros DNS..."
+    # Aquí se guardan los resultados en un archivo
+    fecha=$(date +"%Y%m%d_%H%M%S")
+    echo "[✓] Resultados guardados en: ${archivo}_${fecha}.txt"
+else
+    echo "[✓] No se guardaron los resultados."
+fi
+
 
 ## ⚡ Uso Rápido
 1. **🚀 Ejecutar el script**:
