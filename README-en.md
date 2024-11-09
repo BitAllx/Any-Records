@@ -30,7 +30,7 @@ This script complements the Any-Records tool, providing an interactive interface
 
 ## 🖥️ Preview
 When running the script, you'll see an interface like this:
-```sql
+```rust
 ╔════════════════════════════════════════╗
 ║          DNS Query Tool v1.0           ║
 ║    Advanced Domain Information Tool    ║
@@ -38,7 +38,7 @@ When running the script, you'll see an interface like this:
 Please enter the domain to query:
 ➜ example.com
 [+] Resolving nameserver for example.com...
-[✓] Found nameserver: ns1.example.com.
+[✓] Found nameserver: ns1.example.com
 Do you want to save the DNS records to a file? [y/N]:
 ➜ y
 Enter the output filename:
