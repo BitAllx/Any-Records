@@ -30,26 +30,30 @@ Este script complementa la herramienta Any-Records, proporcionando una interfaz 
 ## 🖥️ Vista Previa
 Al ejecutar el script, verás una interfaz como esta:
 ```bash
-# ╔════════════════════════════════════════╗
-# ║    Herramienta de Consulta DNS v1.0    ║
-# ║  Herramienta Avanzada de Información   ║
-# ║             de Dominios                ║
-# ╚════════════════════════════════════════╝
-echo "Por favor, ingrese el dominio a consultar:"
-read -p "➜ " dominio
-echo "[+] Resolviendo servidor de nombres para $dominio..."
-echo "[✓] Servidor de nombres encontrado: ns1.$dominio"
 
-read -p "¿Desea guardar los registros DNS en un archivo? [s/N]: " guardar
-if [[ $guardar == "s" ]]; then
-    read -p "Ingrese el nombre del archivo de salida: " archivo
-    echo "[+] Consultando registros DNS..."
-    # Aquí se guardan los resultados en un archivo
-    fecha=$(date +"%Y%m%d_%H%M%S")
-    echo "[✓] Resultados guardados en: ${archivo}_${fecha}.txt"
-else
-    echo "[✓] No se guardaron los resultados."
-fi
+### 2. Uso de `tput` en Bash para Colores en un Script
+
+Si el script va a ejecutarse en una terminal y deseas colores específicos, puedes aplicar el comando `tput` en Bash para definir colores en tu código. Esto permite una ejecución más visual en la terminal.
+
+```bash
+# Definir colores usando tput
+verde=$(tput setaf 2)
+azul=$(tput setaf 4)
+reset=$(tput sgr0)
+
+# Inicio del script con colores
+echo "${azul}╔════════════════════════════════════════╗"
+echo "║    ${verde}Herramienta de Consulta DNS v1.0${azul}    ║"
+echo "║  ${verde}Herramienta Avanzada de Información   ${azul}║"
+echo "║             de Dominios                ║"
+echo "╚════════════════════════════════════════╝${reset}"
+
+# Continuar con la lógica del script
+echo -e "${verde}Por favor, ingrese el dominio a consultar:${reset}"
+read -p "➜ " dominio
+echo -e "[${verde}+${reset}] Resolviendo servidor de nombres para ${dominio}..."
+echo -e "[${verde}✓${reset}] Servidor de nombres encontrado: ${azul}ns1.${dominio}${reset}"
+```
 
 
 ## ⚡ Uso Rápido
