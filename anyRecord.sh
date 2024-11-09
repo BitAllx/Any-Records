@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Colors and formatting
 RED='\033[0;31m'
@@ -13,7 +13,7 @@ print_banner() {
     clear
     printf "%b" "$BLUE"
     echo "╔════════════════════════════════════════╗"
-    echo "║          DNS Query Tool v1.0           ║"
+    echo "║         DNS Query Tool v1.0            ║"
     echo "║    Advanced Domain Information Tool    ║"
     echo "╚════════════════════════════════════════╝"
     printf "%b" "$NC\n"
@@ -44,7 +44,6 @@ validate_domain() {
 # Function to get nameserver
 get_nameserver() {
     local domain="$1"
-    # Obtener directamente el nameserver sin la IP
     ns=$(nslookup -type=ns "$domain" 2>/dev/null | grep "nameserver" | head -n 1 | awk '{print $4}')
     if [ -z "$ns" ]; then
         error_exit "Could not resolve nameserver for $domain"
@@ -66,23 +65,7 @@ check_dependencies() {
 perform_dns_query() {
     local domain="$1"
     local nameserver="$2"
-    local temp_file="/tmp/dns_query_$$.txt"
-    
-    # Realizar la consulta y guardar en archivo temporal
-    if nslookup -type=any "$domain" "$nameserver" > "$temp_file" 2>/dev/null; then
-        # Verificar si hay resultados
-        if [ -s "$temp_file" ]; then
-            cat "$temp_file"
-            rm -f "$temp_file"
-            return 0
-        else
-            rm -f "$temp_file"
-            return 1
-        fi
-    else
-        rm -f "$temp_file"
-        return 1
-    fi
+    nslookup -type=any "$domain" "$nameserver" 2>/dev/null
 }
 
 # Main function
@@ -93,7 +76,7 @@ main() {
     # Domain input
     printf "%bPlease enter the domain to query:%b\n" "$YELLOW" "$NC"
     printf "➜ "
-    read domain
+    read -e domain  # Enabling -e for interactive editing
 
     # Validate domain
     validate_domain "$domain"
@@ -107,30 +90,36 @@ main() {
     # Ask for save option
     printf "\n%bDo you want to save the DNS records to a file? [y/N]:%b\n" "$YELLOW" "$NC"
     printf "➜ "
-    read save
+    read -e save  # Enabling -e for interactive editing
 
     case "$save" in
         [Yy]*)
             printf "\n%bEnter the output filename:%b\n" "$YELLOW" "$NC"
             printf "➜ "
-            read file_name
+            read -e file_name  # Enabling -e for interactive editing
 
             # Add timestamp to filename
             timestamp=$(date +%Y%m%d_%H%M%S)
             file_name="${file_name}_${timestamp}.txt"
 
-            printf "\n%b[+]%b Querying DNS records...\n" "$GREEN" "$NC"
+            printf "\n%b[+]%b Querying DNS records and saving to file...\n" "$GREEN" "$NC"
+            
+            # Save query results to file
             {
                 echo "# DNS Query Report for $domain"
                 echo "# Generated on $(date)"
                 echo "# Nameserver: $nameserver"
                 echo
-                if perform_dns_query "$domain" "$nameserver"; then
-                    printf "%b[✓]%b Results saved to: %b%s%b\n" "$GREEN" "$NC" "$BOLD" "$file_name" "$NC"
-                else
-                    error_exit "Failed to query DNS records"
-                fi
+                echo "DNS Query Results:"
+                perform_dns_query "$domain" "$nameserver"
             } > "$file_name"
+
+            # Check if file was saved successfully
+            if [ -f "$file_name" ]; then
+                printf "%b[✓]%b Results saved to: %b%s%b\n" "$GREEN" "$NC" "$BOLD" "$file_name" "$NC"
+            else
+                error_exit "Failed to save DNS records to file"
+            fi
             ;;
         *)
             printf "\n%b[+]%b Querying DNS records...\n" "$GREEN" "$NC"
