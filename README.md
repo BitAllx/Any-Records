@@ -28,5 +28,4 @@ You can clone this repository and run the script as follows:
 ```bash
 git clone https://github.com/your-username/any-records.git
 cd any-records
-
-
+```
