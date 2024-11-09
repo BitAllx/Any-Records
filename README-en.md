@@ -20,7 +20,7 @@
 
 ## 💻 Installation
 You can clone this repository and run the script as follows:
-```shell
+```css
 git clone https://github.com/BitAllx/Any-Records.git
 cd Any-Records
 ```
