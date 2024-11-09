@@ -30,13 +30,13 @@ git clone https://github.com/BitAllx/Any-Records.git
 cd Any-Records
 ```
 
-# Any Records - Guía de Uso
+# DNS Query Tool - Usage Guide
 
-Este script complementa la herramienta Any-Records, proporcionando una interfaz interactiva con formato visual mejorado.
+This script complements the Any-Records tool, providing an interactive interface with enhanced visual formatting.
 
-## Vista Previa
+## Preview
 
-Al ejecutar el script, verás una interfaz así:
+When running the script, you'll see an interface like this:
 
 ```
 ╔════════════════════════════════════════╗
@@ -45,36 +45,36 @@ Al ejecutar el script, verás una interfaz así:
 ╚════════════════════════════════════════╝
 
 Please enter the domain to query:
-➜ ejemplo.com
+➜ example.com
 
-[+] Resolving nameserver for ejemplo.com...
-[✓] Found nameserver: ns1.ejemplo.com
+[+] Resolving nameserver for example.com...
+[✓] Found nameserver: ns1.example.com
 
 Do you want to save the DNS records to a file? [y/N]:
 ➜ y
 
 Enter the output filename:
-➜ ejemplo_dns
+➜ example_dns
 
 [+] Querying DNS records...
-[✓] Results saved to: ejemplo_dns_20240109_143022.txt
+[✓] Results saved to: example_dns_20240109_143022.txt
 ```
 
-## Uso Rápido
+## Quick Usage
 
-1. **Ejecutar el script**:
+1. **Run the script**:
 ```bash
 chmod +x dns-query-tool.sh
 ./dns-query-tool.sh
 ```
 
-2. **Consulta Simple**:
+2. **Simple Query**:
 ```bash
 ./dns-query-tool.sh
 ➜ google.com
 ```
 
-3. **Consulta con Guardado**:
+3. **Query with Save Option**:
 ```bash
 ./dns-query-tool.sh
 ➜ google.com
@@ -84,12 +84,12 @@ Enter the output filename:
 ➜ google_records
 ```
 
-## Diferencias con Any-Records
+## Differences from Any-Records
 
-- Interfaz visual con colores y formato mejorado
-- Proceso interactivo paso a paso
-- Opción integrada para guardar resultados
-- Validación de dominio en tiempo real
-- Timestamps automáticos en archivos guardados
+- Visual interface with colors and enhanced formatting
+- Step-by-step interactive process
+- Integrated option to save results
+- Real-time domain validation
+- Automatic timestamps in saved files
 
-Este script puede usarse como complemento de Any-Records para casos donde se prefiera una interfaz más visual e interactiva.
+This script can be used as a complement to Any-Records for cases where a more visual and interactive interface is preferred.
