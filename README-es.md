@@ -31,7 +31,7 @@ Este script complementa la herramienta Any-Records, proporcionando una interfaz 
 Al ejecutar el script, verás una interfaz como esta:
 ```
 ╔════════════════════════════════════════╗
-║       Herramienta de Consulta DNS v1.0 ║
+║    Herramienta de Consulta DNS v1.0    ║
 ║  Herramienta Avanzada de Información   ║
 ║             de Dominios                ║
 ╚════════════════════════════════════════╝
