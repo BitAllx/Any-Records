@@ -16,7 +16,8 @@
 
 ### Installing Dependencies
 
-1. **Install nslookup**: `nslookup` is pre-installed on most operating systems. If it’s missing, you can install it with your package manager:
+1. **Install Python 3.6+**: You can download it from [Python.org](https://www.python.org/downloads/).
+2. **Install nslookup**: `nslookup` is pre-installed on most operating systems. If it’s missing, you can install it with your package manager:
     - On **Ubuntu/Debian**: `sudo apt install dnsutils`
     - On **CentOS/RHEL**: `sudo yum install bind-utils`
 
